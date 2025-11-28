@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ysxd6SBhr+Q=",
+  "success": true,
+  "projectFilePath": "D:\\Resonance\\ResonanceBackend\\billing-service\\billing-service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.objectpool\\8.0.10\\microsoft.extensions.objectpool.8.0.10.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\soapcore\\1.2.1.11\\soapcore.1.2.1.11.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\system.codedom\\9.0.2\\system.codedom.9.0.2.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\system.security.cryptography.pkcs\\8.0.1\\system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\system.security.cryptography.xml\\8.0.2\\system.security.cryptography.xml.8.0.2.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\system.servicemodel.http\\8.1.1\\system.servicemodel.http.8.1.1.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\system.servicemodel.primitives\\8.1.1\\system.servicemodel.primitives.8.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}

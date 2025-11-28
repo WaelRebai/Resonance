@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ResonanceBackend", "ResonanceBackend", "{54EDE82C-8444-2694-8047-4DA77A3BD03B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "billing-service", "ResonanceBackend\billing-service\billing-service.csproj", "{41273F0A-77EB-5111-A454-8F7D1D745CA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41273F0A-77EB-5111-A454-8F7D1D745CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41273F0A-77EB-5111-A454-8F7D1D745CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41273F0A-77EB-5111-A454-8F7D1D745CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41273F0A-77EB-5111-A454-8F7D1D745CA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{41273F0A-77EB-5111-A454-8F7D1D745CA0} = {54EDE82C-8444-2694-8047-4DA77A3BD03B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F345F780-C119-421F-8FD7-70ED1661798C}
+	EndGlobalSection
+EndGlobal
