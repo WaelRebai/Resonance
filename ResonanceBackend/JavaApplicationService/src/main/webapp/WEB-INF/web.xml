@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <display-name>CXF JAX-WS Application</display-name>
+
+    <!-- 1. Configure Spring Context Loader Listener -->
+    <!-- This listener loads the Spring configuration file defining the CXF Bus and Endpoints. -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <!-- The cxf-beans.xml file contains the <jaxws:endpoint> definition, which is critical. -->
+        <param-value>/WEB-INF/cxf-beans.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- 2. Register the Apache CXF Servlet -->
+    <!-- This servlet acts as the main entry point for all SOAP requests. -->
+    <servlet>
+        <servlet-name>CXFServlet</servlet-name>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+        <!-- Enable async support for modern Jakarta EE containers -->
+        <async-supported>true</async-supported>
+    </servlet>
+
+    <!-- 3. Map the CXF Servlet to a URL pattern -->
+    <!-- All services defined in cxf-beans.xml will be exposed under the /soapservices/ path. -->
+    <!-- For example, if your service name is 'CalculatorService', the WSDL would be at: 
+         http://localhost:8080/JavaApplicationService/soapservices/CalculatorService?wsdl -->
+    <servlet-mapping>
+        <servlet-name>CXFServlet</servlet-name>
+        <url-pattern>/soapservices/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>
