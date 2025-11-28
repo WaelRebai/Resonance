@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>JavaApplicationService</groupId>
+  <artifactId>JavaApplicationService</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <properties>
+    <!-- Java 21 is set in the compiler plugin -->
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <!-- CXF 3.x for Java EE 8 / Tomcat 9 support -->
+    <cxf.version>3.6.2</cxf.version>
+    <!-- Servlet API 4.0 for Tomcat 9 -->
+    <servlet-api.version>4.0.1</servlet-api.version>
+    <!-- JAX-WS API for Java EE 8 -->
+    <jaxws-api.version>2.3.1</jaxws-api.version>
+    <!-- Spring 5.x for Java EE 8 support -->
+    <spring.version>5.3.31</spring.version>
+  </properties>
+
+  <dependencies>
+    <!-- CORE CXF JAX-WS DEPENDENCIES -->
+    
+    <!-- CXF JAX-WS Frontend: Provides the core SOAP implementation and runtime -->
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-frontend-jaxws</artifactId>
+      <version>${cxf.version}</version>
+    </dependency>
+
+    <!-- CXF HTTP Servlet Transport: Required to deploy CXF endpoints inside a servlet container (WAR) -->
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-rt-transports-http-servlet</artifactId>
+      <version>${cxf.version}</version>
+    </dependency>
+
+    <!-- JAVA EE 8 API DEPENDENCIES (javax.*) -->
+    
+    <!-- JAX-WS API: Required for @WebService and other annotations -->
+    <dependency>
+        <groupId>javax.xml.ws</groupId>
+        <artifactId>jaxws-api</artifactId>
+        <version>${jaxws-api.version}</version>
+    </dependency>
+
+    <!-- Servlet API (Provided by the Tomcat 9 container) -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>${servlet-api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Spring Framework Dependencies -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>21</release>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.2.3</version>
+      </plugin>
+    </plugins>
+  </build>
+</project>
